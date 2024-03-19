@@ -5,14 +5,14 @@ import 'package:myntra/pages/splashScreen.dart';import 'package:flutter_riverpod
 // Import your HomeScreen widget
 
 void main() {
-  runApp(MyApp());
+  runApp(ProviderScope(child:MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ProviderScope(
-      child: MaterialApp(
+    return
+      MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Myntra',
         theme: ThemeData(
@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
           '/home': (context) => HomeScreen(), // Home screen route
           // Add more routes if needed
         },
-      ),
-    );
+      );
   }
 }
